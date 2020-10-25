@@ -1,0 +1,230 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+/* Imports */
+@import url('../css/mobile.css');
+
+/* Fonts */
+
+h1,h2,h3,h4,h5,h6,p,a{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: rgb(34, 30, 30);
+}
+
+a{
+    text-decoration: none;
+    transition: color ease-in-out 0.2s;
+}
+
+a:hover{
+    color: rgb(102, 95, 95)
+}
+
+/* outer grid */
+
+body{
+    display: grid;
+    grid-template-columns: 10vw 80vw 10vw;
+    grid-template-rows: 5vh auto 5vh;
+    grid-template-areas: 
+        "left top right"
+        "left content right"
+        "left bottom right";
+    background-color: azure;
+}
+
+.bg {
+    animation: slide 5s ease-in-out infinite alternate;
+    background-image: linear-gradient(-60deg, #6c3 50%, #09f 50%);
+    bottom:0;
+    left:-50%;
+    opacity:.5;
+    position:fixed;
+    right:-50%;
+    top:0;
+    z-index:-1;
+  }
+  
+  .bg2 {
+    animation-direction:alternate-reverse;
+    animation-duration:6s;
+  }
+  
+  .bg3 {
+    animation-duration:7s;
+  }
+
+  @keyframes slide {
+    0% {
+      transform:translateX(-25%);
+    }
+    100% {
+      transform:translateX(25%);
+    }
+  }
+
+/* inner grid */
+
+div#wrapper{
+    grid-area: content;
+    box-shadow: 0 7px 10px 10px rgba(0,0,0,0.5);
+
+    display: grid;
+    grid-template-columns: 5vw 70vw 5vw;
+    grid-template-rows: auto auto auto auto;
+    grid-template-areas: 
+        "back top rightTop"
+        "left breadcrumbs right"
+        "left content right"
+        "footer footer footer";
+    row-gap: 2vh;
+    background-color: white;
+}
+
+a#backArrow{
+        border-bottom: 1px solid rgba(0,0,0,0.7);
+        grid-area: back;
+}
+
+a#backArrow > img {
+    height: 5vh;
+    padding: 1vh;
+}
+
+div#wrapper > header{
+    grid-area: top;
+
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    /*padding: 0 2vw 0;*/
+    border-bottom: 1px solid rgba(0,0,0,0.7);
+}
+
+div#wrapper > header > h1{
+    text-align: center;
+    line-height: 7vh;
+}
+
+#dhbwLogo{
+    height: 5vh;
+    padding: 1vh;
+    width: auto;
+}
+
+div#wrapper > #rightTop{
+    grid-area: rightTop;
+    border-bottom: 1px solid rgba(0,0,0,0.7);
+}
+
+section#breadcrumbs{
+    grid-area: breadcrumbs;
+}
+
+main{
+    grid-area: content;
+
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+}
+
+main > section#textBlock{
+    flex-basis: 100%;
+    margin-bottom: 2vh;
+}
+
+main > article {
+    min-width: 15vw;
+    margin: 1vh;
+    /*min-height: 10vw;*/
+
+    box-shadow: 0 5px 10px 5px rgba(0,0,0,0.5);
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    transition: transform ease-in-out 0.2s;
+    transform: scale(0.9);
+}
+
+main > article:hover{
+    box-shadow: 0 5px 10px 5px rgba(0,0,0,0.7);
+    transform: scale(1);
+}
+
+main > article > a{
+    padding: 1vh;
+    width: 100%;
+}
+
+main > article h2{
+    width: 100%;
+    text-align: center;
+}
+
+main > iframe{
+    flex-basis: 100%;
+    min-height: 60vh;
+    border: none;
+}
+
+main > section#sources{
+    flex-basis: 100%;
+}
+
+main > section#sources ul{
+    padding-left: 2vw;
+    list-style-type: "- ";
+}
+
+footer{
+    grid-area: footer;
+}
+
+footer > #greyBar{
+    width: 100%;
+    height: 5vh;
+    background-color: #89959b;
+}
+
+footer > p{
+    line-height: 4vh;
+    padding: 0 2vw 0;
+    background-color: #99061e;
+    color: white;
+    text-align: center;
+    /*border-top: 1px solid rgba(0,0,0,0.7);*/
+}
+
+footer > #redBar{
+    width: 100%;
+    height: 5vh;
+    background-color: #e4082a;
+}
+
+.empty h2, .empty p{
+    color: grey;
+}
+
+@media screen and (max-width: 600px){
+
+    body{
+        grid-template-columns: 5vw 90vw 5vw;
+    }
+
+    div#wrapper{
+        grid-template-columns: 5% 90% 5%;
+    }
+
+    div#wrapper > header > h1{
+        width: 100%;
+        order: 2;
+    }
+
+    #dhbwLogo{
+        width: 100%;
+        height: auto;
+    }
+  }
