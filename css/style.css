@@ -194,13 +194,23 @@ footer > #topBar{
     background-color: #e4082a;
 }
 
-footer > p{
-    line-height: 4vh;
-    padding: 0 2vw 0;
+footer > div#footerText{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
     background-color: #99061e;
+}
+
+footer > div#footerText p{
+    line-height: 4vh;
     color: white;
     text-align: center;
     /*border-top: 1px solid rgba(0,0,0,0.7);*/
+}
+
+footer > div#footerText a{
+    color: white;
+    text-align: center;
 }
 
 footer > #bottomBar{
