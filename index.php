@@ -107,6 +107,9 @@
                     <p><a href="impressum.html">Impressum</a></p>
                 </div>
                 <div id="bottomBar"></div>
+                <?php
+                    include('test.php');
+                ?>
             </footer>
         </div>
     </body>
