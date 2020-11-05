@@ -8,7 +8,7 @@
 
 /* Fonts */
 
-h1,h2,h3,h4,h5,h6,p,a{
+h1,h2,h3,h4,h5,h6,p,a,li{
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color: rgb(34, 30, 30);
 }
@@ -21,6 +21,23 @@ a{
 a:hover{
     color: rgb(102, 95, 95)
 }
+
+p{
+    margin: 1vh 0 1vh;
+}
+
+/* Lists */
+
+ol{
+    list-style: upper-roman;
+    margin-left: 1.5vw;
+}
+
+ol.secondLevel{
+    list-style: lower-latin;
+    margin-left: 2vw;
+}
+
 
 /* outer grid */
 
