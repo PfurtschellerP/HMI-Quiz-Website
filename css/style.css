@@ -8,9 +8,13 @@
 
 /* Fonts */
 
-h1,h2,h3,h4,h5,h6,p,a,li{
+h1,h2,h3,h4,h5,h6,p,a,li,input{
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color: rgb(34, 30, 30);
+}
+
+p{
+    text-align: justify;
 }
 
 a{
@@ -27,6 +31,10 @@ p{
 }
 
 /* Lists */
+
+ul{
+    padding-left: 1.5vw;
+}
 
 ol{
     list-style: upper-roman;
@@ -129,6 +137,11 @@ div#wrapper > header > h1{
     height: 5vh;
     padding: 1vh;
     width: auto;
+    transition: all ease-in-out 0.2s;
+}
+
+#dhbwLogo:hover{
+    transform: scale(1.1);
 }
 
 div#wrapper > #rightTop{
@@ -158,6 +171,12 @@ main > section.borderBottom{
     padding-top: 2vh;
 }
 
+main img{
+    width: 60vw;
+    height: auto;
+    padding: 0 5vw 0;
+}
+
 main > article {
     min-width: 15vw;
     margin: 1vh;
@@ -177,12 +196,20 @@ main > article:hover{
 }
 
 main > article > a{
-    padding: 1vh;
+    padding: 1rem;
     width: 100%;
+}
+
+main#indexPage > article > a{
+    padding: 1.2rem;
 }
 
 main > article h2{
     width: 100%;
+    text-align: left;
+}
+
+main#indexPage > article h2{
     text-align: center;
 }
 
@@ -215,15 +242,22 @@ footer > #topBar{
 footer > div#footerText{
     display: flex;
     flex-flow: row wrap;
-    justify-content: space-around;
+    /*justify-content: space-around;*/
     background-color: #99061e;
 }
 
 footer > div#footerText p{
     line-height: 4vh;
     color: white;
-    text-align: center;
+    text-align: right;
     /*border-top: 1px solid rgba(0,0,0,0.7);*/
+    padding: 0 5vw 0;
+    flex-basis: 10vw;
+}
+
+footer > div#footerText p:first-child{
+    flex-basis: 50vw;
+    text-align: left;
 }
 
 footer > div#footerText a{
@@ -261,3 +295,51 @@ footer > #bottomBar{
         height: auto;
     }
   }
+
+/* GoToTop Button */
+
+#goToTopButton {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 30px;
+    z-index: 99;
+    font-size: 18px;
+    border: none;
+    outline: none;
+    background-color: #e4082a;
+    color: white;
+    cursor: pointer;
+    padding: 1.1rem 0.8rem 0.8rem;
+    box-shadow: 0 5px 5px 5px rgba(0,0,0,0.5);
+    transition: all ease-in-out 0.1s;
+}
+
+#goToTopButton:before,
+#goToTopButton:after {
+ content: '';
+ position: absolute;
+ top: 20%;
+ height: 8%;
+ width: 40%;
+ background: white;
+}
+
+#goToTopButton:before {
+    left: 10%;
+    transform: skewY(-30deg);
+}
+   
+#goToTopButton:after {
+    right: 10%;
+transform: skewY(30deg);
+}
+
+#goToTopButton:hover:before,
+#goToTopButton:hover:after{
+    height: 10%;
+}
+  
+#goToTopButton:hover {
+    background-color: #555;
+}

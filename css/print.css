@@ -27,3 +27,7 @@ a#backArrow{
 h1{
     line-height: 6vh;
 }
+
+#goToTopButton{
+    display: none !important;
+}
