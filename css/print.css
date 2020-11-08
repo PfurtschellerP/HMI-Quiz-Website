@@ -8,12 +8,13 @@ footer{
 
 div#wrapper{
     box-shadow: none !important;
-    grid-template-columns: 100vw;
+    grid-template-columns: 80vw;
     grid-template-rows: auto auto auto;
     grid-template-areas: 
     "top"
     "breadcrumbs"
     "content";
+    margin: 15mm 10vw 15mm;
 }
 
 a#backArrow{
@@ -31,3 +32,18 @@ h1{
 #goToTopButton{
     display: none !important;
 }
+
+h1,h2{
+    break-before: page;
+}
+
+h2.intro{
+    break-before: auto;
+}
+
+h2#literature{
+    border: none !important;
+}
+
+/* Datum etc. ausblenden */
+@page { size: auto;  margin: 0mm}

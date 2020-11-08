@@ -8,7 +8,7 @@
 
 /* Fonts */
 
-h1,h2,h3,h4,h5,h6,p,a,li,input{
+h1,h2,h3,h4,h5,h6,p,a,li,input,figcaption{
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color: rgb(34, 30, 30);
 }
@@ -37,13 +37,28 @@ ul{
 }
 
 ol{
-    list-style: upper-roman;
-    margin-left: 1.5vw;
+    list-style-type: none;
+    counter-reset: item;
 }
 
-ol.secondLevel{
-    list-style: lower-latin;
-    margin-left: 2vw;
+ol li {
+    display: table;
+    counter-increment: item;
+    margin-bottom: 0.4em;
+}
+
+ol li:before{
+    content: counters(item, ".") " ";
+    display: table-cell;
+    padding-right: 0.5em;   
+}
+
+ol li li {
+    margin: 0;
+}
+
+ol li li::before {
+    content: counters(item, ".") " ";
 }
 
 
