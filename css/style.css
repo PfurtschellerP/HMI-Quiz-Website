@@ -34,6 +34,7 @@ p{
 
 ul{
     padding-left: 1.5vw;
+    list-style-type: "- ";
 }
 
 ol{
@@ -187,9 +188,9 @@ main > section.borderBottom{
 }
 
 main img{
-    width: 60vw;
+    width: 40vw;
     height: auto;
-    padding: 0 5vw 0;
+    padding: 0 15vw 0;
 }
 
 main > article {

@@ -1,5 +1,11 @@
-body{
+body {
+    margin-top:15mm;
+    background: white !important;
     display: block;
+}
+
+div.bg{
+    display: none !important;
 }
 
 footer{
@@ -34,7 +40,13 @@ h1{
 }
 
 h1,h2{
-    break-before: page;
+    page-break-before: always;
+}
+
+p{
+    page-break-inside: avoid;
+    page-break-before: avoid;
+    page-break-after: avoid;
 }
 
 h2.intro{
@@ -46,4 +58,7 @@ h2#literature{
 }
 
 /* Datum etc. ausblenden */
-@page { size: auto;  margin: 0mm}
+@page {
+    size: A4;
+    margin: 0mm 0 10mm;
+}
